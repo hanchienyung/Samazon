@@ -1,8 +1,10 @@
 package com.cy.example.demo.DataLoader;
 
 
+import com.cy.example.demo.Models.Product;
 import com.cy.example.demo.Models.Role;
 import com.cy.example.demo.Models.User;
+import com.cy.example.demo.Repositories.ProductRepository;
 import com.cy.example.demo.Repositories.RoleRepository;
 import com.cy.example.demo.Repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +23,9 @@ public class DataLoader implements CommandLineRunner {
 
     @Autowired
     RoleRepository roleRepository;
+
+    @Autowired
+    ProductRepository productRepository;
 
     @Override
     public void run(String... strings) throws Exception {
@@ -51,5 +56,60 @@ public class DataLoader implements CommandLineRunner {
         User user4 = new User("clark@kent.com", "password", "Clark", "Kent", true, "clark");
         user4.setRoles(Arrays.asList(userRole, adminRole));
         userRepository.save(user4);
+
+
+//         public Product(String productName, String productDesc, String price, String brand, String color, String feature) {
+//            this.productName = productName;
+//            this.productDesc = productDesc;
+//            this.price = price;
+//            this.brand = brand;
+//            this.color = color;
+//            this.feature = feature;
+//        }
+
+        Product product1 = new Product("Nike Shoe", "athletic shoes", "100", "Nike", "blue", "max cushion");
+        productRepository.save(product1);
+
+        Product product2 = new Product("Nike Shoe", "athletic shorts", "10", "Nike", "red", "dryfit");
+        productRepository.save(product2);
+
+        Product product3 = new Product("Nike Socks", "athletic socks", "5", "Nike", "white", "max cushion");
+        productRepository.save(product3);
+
+        Product product4= new Product("Travis ", "athletic shoes", "100", "Nike", "blue", "max cushion");
+        productRepository.save(product4);
+
+        Product product5 = new Product("Chanel Shoe", "athletic shoes", "100", "Nike", "blue", "max cushion");
+        productRepository.save(product5);
+
+        Product product6 = new Product("Burberry Shoe", "athletic shoes", "100", "Nike", "blue", "max cushion");
+        productRepository.save(product6);
+
+        Product product7 = new Product("Gucci", "athletic shoes", "100", "Nike", "blue", "max cushion");
+        productRepository.save(product7);
+
+        Product product8 = new Product("Jordan Shoe", "athletic shoes", "100", "Nike", "blue", "max cushion");
+        productRepository.save(product8);
+
+        Product product9 = new Product("Versace Shoe", "athletic shoes", "100", "Nike", "blue", "max cushion");
+        productRepository.save(product9);
+
+        Product product10 = new Product("Rolex", "watch", "100000", "Gold", "Gold", "Classy");
+        productRepository.save(product10);
+
+        Product product11 = new Product("Rolex 2", "watch", "10000000000", "Gold", "Gold", "Presdiential");
+        productRepository.save(product11);
+
+        Product product12 = new Product("Diamomd bracelet", "KY jEWELERS", "100", "KAY", "blue", "EXPENSIVE");
+        productRepository.save(product12);
+
+        Product product13 = new Product("tELSA MODEL X", "CAR", "100000000000", "Telsa", "blue", "Fast");
+        productRepository.save(product13);
+
+        Product product14 = new Product("Lambo", "Car", "300000000", "lambo", "green", "super fast");
+        productRepository.save(product14);
+
+        Product product15 = new Product("Nike Shoe", "athletic shoes", "100", "Nike", "blue", "max cushion");
+        productRepository.save(product15);
     }
 }
