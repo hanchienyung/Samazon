@@ -3,6 +3,7 @@ package com.cy.example.demo.Controller;
 import com.cy.example.demo.Models.Product;
 import com.cy.example.demo.Models.User;
 import com.cy.example.demo.Repositories.ProductRepository;
+import com.cy.example.demo.Repositories.UserRepository;
 import com.cy.example.demo.Service.UserService;
 import com.sun.org.apache.xpath.internal.operations.Bool;
 
@@ -30,6 +31,9 @@ public class HomeController {
 
     @Autowired
     ProductRepository productRepository;
+
+    @Autowired
+    UserRepository userRepository;
 
     @RequestMapping("/")
     public String index(){
@@ -64,7 +68,11 @@ public class HomeController {
         }
         return "index";
     }
-
+@GetMapping("/addproduct")
+public String addProductForm(Model model){
+    model.addAttribute("product", new Product());
+        return "addproduct";
+}
     @RequestMapping("/addproduct")
     public String addProduct(Model model, Product product){
         model.addAttribute("product", new Product());
@@ -96,4 +104,16 @@ public class HomeController {
         productRepository.delete(id);
         return "redirect:/listproduct";
     }
+    @RequestMapping("/listcustomers")
+    public String listCustomers(Model model) {
+        model.addAttribute("listcustomer", userRepository.findAll());
+        return "listcustomers";
+    }
+   /* @RequestMapping("/listcartitems")
+    public String listCartItems(Model model) {
+        //change userRepository to cartRepository
+        model.addAttribute("listcartitems", userRepository.findAll());
+
+        return "listcustomers";
+    }*/
 }

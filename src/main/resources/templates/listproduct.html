@@ -6,10 +6,10 @@
 </head>
 <body>
 
-<nav th:replace="fragment :: navbar"></nav>
-<section>
+<div class="body-content">
+    <div class="module">
 
-    <div class="container">
+    <div class="container" style="color: red">
 
         <ul  class="row" th:each="product : ${products}">
             <li th:text="${product.productName}"></li>
@@ -22,9 +22,10 @@
 
         </ul>
     </div><!-- /.container -->
-</section>
-<section>
+
+
     <span th:replace="fragment::bootstrap4js"></span>
-</section>
+    </div>
+</div>
 </body>
 </html>
