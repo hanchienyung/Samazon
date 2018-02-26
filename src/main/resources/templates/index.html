@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8" />
     <title>Title</title>
+    <div th:replace = "fragment :: top"></div>
 </head>
 <body>
+<div th:replace = "fragment :: navbar"></div>
 <h2>Insecure Page</h2>
 <div sec:authorize="hasAuthority('ADMIN')">
     This content is only show to Admin authenticated users. <br />
@@ -27,5 +29,6 @@ Logged user: <span sec:authentication="name">
 <a href="/logout">Logout</a>
 <a href="/register">Register</a>
 <a href="/secure">Secure Page</a>
+<div th:replace=" fragment :: bootstrap4js"></div>
 </body>
 </html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.tymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+
+<link href="//db.onlinewebfonts.com/c/a4e256ed67403c6ad5d43937ed48a77b?family=Core+Sans+N+W01+35+Light" rel="stylesheet" type="text/css"/>
+
+    <link rel="stylesheet" href="/assets/css/stylesheet.css" type="text/css">
+</head>
+<div class="body-content">
+    <div class="module">
+        <div class="container-fluid">
+        <h1>Create user registration</h1>
+        <form class="form" action="#" method="post" enctype="multipart/form-data" autocomplete="off">
+            <div class="alert alert-error"></div>
+            <input type="text" placeholder="User Name" name="username" required />
+            <input type="email" placeholder="Email" name="email" required />
+            <input type="password" placeholder="Password" name="password" autocomplete="new-password" required />
+            <input type="text" placeholder="First Name" name="firstName" required />
+            <input type="text" placeholder="Last Name" name="lastName" required />
+
+
+            <input type="submit" value="Register" name="register" class="btn btn-block btn-primary" />
+        </form>
+    </div></div>
+</div>
+</html>
